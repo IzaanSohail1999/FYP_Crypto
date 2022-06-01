@@ -1,0 +1,219 @@
+{
+  "Header": {
+    "title": "Cryptocurrency Prediction",
+    "paragraph": "A Website that uses Deep Learning Model Bidirectional LSTM with Wrapper and MDI Feature Selection appraoch to predict prices of Bitcoin and Ethereum."
+  },
+  "About": {
+    "paragraph": "A cryptocurrency is a type of electronic currency that is created and kept. Cryptocurrency prices are extremely volatile, making them both high-benefit and high-risk investments. The goal of this project is to address this problem and forecast the price of the top two cryptocurrencies, Bitcoin and Ethereum as accurately as possible by extracting trend from historical data.",
+    "Why": [
+      "Extract Detailed Data",
+      "Process and Clean Data",
+      "Automated feature selection",
+      "Select features using MDI and Wrapper Appraoch "
+    ],
+    "Why2": [
+      "Train Bidirectioanl LSTM",
+      "Compare feature selection",
+      "Monitor Model Performance using Cusum",
+      "Develop Web site to dispay results and working"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Bitcoin Wrapper Appraoch Error Percentages",
+      "largeImage": "img/portfolio/Bitcoin_wrapper_approach.png",
+      "smallImage": "img/portfolio/Bitcoin_wrapper_approach.png"
+    },
+    {
+      "title": "Ethereum Wrapper Appraoch Error Percentages",
+      "largeImage": "img/portfolio/Ethereum_wrapper_approach.png",
+      "smallImage": "img/portfolio/Ethereum_wrapper_approach.png"
+    },
+    {
+      "title": "Bitcoin skLearn Appraoch Error Percentages",
+      "largeImage": "img/portfolio/BTC_sklearn_MDI.png",
+      "smallImage": "img/portfolio/BTC_sklearn_MDI.png"
+    },
+    {
+      "title": "Ethereum skLearn Appraoch Error Percentages",
+      "largeImage": "img/portfolio/Eth_sklearn_MDI.png",
+      "smallImage": "img/portfolio/Eth_sklearn_MDI.png"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-database",
+      "name": "Extract Data",
+      "text": "A web scraper written in Python 3.6 was used to obtain data about Bitcoin and Ethereum from https://bitinfocharts.com. The data for both currencies was analyzed in three different intervals: i) 2013 April 1 - 2016 April 1, ii) 2013 April 1 -  2017 April 1, and iii) 2013 April 1 -  2019 December 31st. These 3 intervals were used to compare with the models given by [36]. More than 700 technical indicators were included in the data. Using the feature selection methods outlined later in the document, a set of features were chosen. Simple Moving Average (SMA), Exponential Moving Average (EMA), Relative Strength Index (RSI), Weighted Moving Average (WMA), Standard Deviation (STD), Variance (VAR), Triple Moving Exponential (TRIX), and Rate of Change(ROC)  are some of the technical indicators. These technical indicators are calculated over three, seven, fourteen, thirty, and ninety days.The end-of-day closing prices are regarded as raw values. Table 2 lists the raw attributes that these technical indicators are based on. Technical indicators display properties not immediately apparent in raw data, such as variances and standard deviations as a function of time. These technical indicators were created to display these aspects in the BTC and ETH price time-series. For example, instead of merely showing the raw transactions and hashrates, they illustrate how the ETH or BTC price is related to the standard deviation of the transactions or hashrate across 14 day intervals."
+    },
+    {
+      "icon": "fa fa-filter",
+      "name": "Process Data",
+      "text": "In Data preprocessing a number of steps were done to clean and scale the data. Sklearn Simple imputer was used to fill the missing data in the dataframe using the most frequently used strategy and fit transform together to increase model accuracy.The cleaned data was then turned into a data frame, resulting in a two-dimensional data set with rows and columns.Using the sklearn library function train test split, the data was split into test and train groups, with the test size set to 33% of the total data and random state of 42 to control the  shuffling before splitting data. The features were scaled using the minmax scaler for training the LSTM model. The features are shifted between 0 and 1 with the minmax scaling, while the relative magnitude of the outliers is preserved. The shape of the original distribution is preserved by MinMaxScaler. It has no effect on the information included in the original data."
+    },
+    {
+      "icon": "fa fa-cubes",
+      "name": "Feature Selection (MDI)",
+      "text": [
+        [
+          "Feature selection improves the machine learning process and increases the predictive power of machine learning algorithms by selecting the most important variables and eliminating redundant and irrelevant features. It is necessary to improve model performance. Several alternative approaches were used to extract and prune features iteratively.Firstly, RandomForestRegressor was initialized to fit a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.The bootstrap was set to False thus the whole dataset was used to build each tree and the estimator was set to default."
+        ],
+        [
+          "Next Impurity-based feature importance of RandomForestClassifier was implemented followed by Sklearns permutation_importance feature selection to improve accuracy and select best features to be fed to the model.Permutation Importance returns us importances mean which is stored in a sorted manner using the formula given below: "
+        ],
+        [
+          "importances mean[i] - 2 * importances std[i] > 0 "
+        ],
+        [
+          "where std stands for standard deviation. If the condition is met then the feature is appended into the selected list of features. Random forests is an ensemble learning method for regression and other problems that works by training a large number of decision trees. The mean or average prediction of the individual trees is returned for regression tasks.A random forest, unlike a single decision tree, may forecast using hundreds of trees, yielding better results. It does not necessitate substantial training and is suitable for small datasets and quick evaluation. One of the most extensively used measures of feature relevance, Mean Decrease Impurity (MDI), wrongly allocates high importance to noisy features, resulting in systematic bias in feature selection[28].The improvement in the Gini gain splitting criterion, which contains a weighted mean of the individual trees improvement in the splitting criterion created by each variable, is described by the mean decrease in impurity (Gini) significance metric. The Gini impurity index is calculated as follows:"
+        ],
+        [
+          "G= sum_{i=1}^{n_c} p_i(1-p_i) = 1 - sum_{i=1}^{n_c} p_i^2"
+        ],
+        [
+          " where nc represents the number of classes in the target variable and pi represents the class ratio. In other words, it measures the disorder of a set of elements. It is calculated as the probability of mislabeling an element assuming that the element is randomly labeled according to the distribution of all the classes in the set."
+        ]
+      ]
+    },
+    {
+      "icon": "fa fa-cubes",
+      "name": "Feature Selection (Wrapper)",
+      "text": [
+        [
+          "Feature selection improves the machine learning process and increases the predictive power of machine learning algorithms by selecting the most important variables and eliminating redundant and irrelevant features. It is necessary to improve model performance. Several alternative approaches were used to extract and prune features iteratively.Firstly, RandomForestRegressor was initialized to fit a number of classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.The bootstrap was set to False thus the whole dataset was used to build each tree and the estimator was set to default."
+        ],
+        [
+          "Next Impurity-based feature importance of RandomForestClassifier was implemented followed by Sklearns permutation_importance feature selection to improve accuracy and select best features to be fed to the model.Permutation Importance returns us importances mean which is stored in a sorted manner using the formula given below: "
+        ],
+        [
+          "importances mean[i] - 2 * importances std[i] > 0 "
+        ],
+        [
+          "where std stands for standard deviation. If the condition is met then the feature is appended into the selected list of features. Random forests is an ensemble learning method for regression and other problems that works by training a large number of decision trees. The mean or average prediction of the individual trees is returned for regression tasks.A random forest, unlike a single decision tree, may forecast using hundreds of trees, yielding better results. It does not necessitate substantial training and is suitable for small datasets and quick evaluation. One of the most extensively used measures of feature relevance, Mean Decrease Impurity (MDI), wrongly allocates high importance to noisy features, resulting in systematic bias in feature selection[28].The improvement in the Gini gain splitting criterion, which contains a weighted mean of the individual trees improvement in the splitting criterion created by each variable, is described by the mean decrease in impurity (Gini) significance metric. The Gini impurity index is calculated as follows:"
+        ],
+        [
+          "G= sum_{i=1}^{n_c} p_i(1-p_i) = 1 - sum_{i=1}^{n_c} p_i^2"
+        ],
+        [
+          " where nc represents the number of classes in the target variable and pi represents the class ratio. In other words, it measures the disorder of a set of elements. It is calculated as the probability of mislabeling an element assuming that the element is randomly labeled according to the distribution of all the classes in the set."
+        ]
+      ]
+    },
+    {
+      "icon": "fa fa-gears",
+      "name": "BiDirectional LSTM",
+      "text": [
+        [
+          "We predicted the bitcoin and Ethereum prices using the BiDirectional LSTM model. An LSTM network is a type of recurrent neural network (RNN) that can learn long-term dependencies between time steps of sequence data.This deep learning model is very beneficial for time-series data modeling and forecasting. Because the daily Bitcoin and Ethereum price and its characteristics are time series data, LSTM may be used to make price forecasts. The diagram below illustrates the architecture of a simple LSTM network for regression. The network starts with a sequence input layer followed by an LSTM layer. The network ends with a fully connected layer and a regression output layer.A common LSTM unit is composed of a cell, an input gate (i), an output gate (o) and a forget gate (f). The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell. The equations for the gates, cell state , candidate cell state and the final output in LSTM are given by:"
+        ]
+      ]
+    },
+    {
+      "icon": "fa fa-binoculars",
+      "name": "Comparison",
+      "text": [
+        [
+          "To be Written"
+        ]
+      ]
+    },
+    {
+      "icon": "fa fa-line-chart",
+      "name": "Monitor Model Performance",
+      "text": [
+        [
+          "A successful forecasting system design includes developing and executing processes to monitor the performance of the forecasting model. Regardless of how well the forecasting model initially performs, It is expected that its performance may decline over time. The time series pattern may shift due to internal inertial forces. The forces that drive the process may change over time or as a result of external factors and  additional clients entering the market. A change in the level or slope of the variable being projected, for example, could occur. It's also feasible that the data's intrinsic unpredictability will rise. As a result, performance monitoring is critical. A cumulative sum (CUSUM) chart is a type of control chart used to monitor small shifts in the process mean. It uses the cumulative sum of deviations from a target.The CUSUM chart plots the cumulative sum of deviations from the target for individual measurements or subgroup means[29].The CUSUM is highly useful in detecting changes in the monitored variable's level. It operates by accumulating deviations above the desired goal value T0 (typically zero or the average forecast error) with one statistic C+ and deviations below the target with another statistic C. The higher and lower CUSUMs are the statistics C+ and C, respectively[37]. For implementing CUSUM on our models firstly variance of the entire list of predicted values was calculated along with standard-deviation(std). After which the std was divided by the number(n) of values predicted and boundary limits were defined by multiplying the standard-deviation with 3. A graph represented in figure 6 was plotted representing all predicted values along with upper and lower limit to determine how many values fell in range.Depending on the number of values in range it is decided where to train the model again with recent data to get improved accuracy and precision in predicted values."
+        ]
+      ]
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/Sir Sufyan.png",
+      "name": "Dr. Sufyan Hamid",
+      "job": "Supervisor"
+    },
+    {
+      "img": "img/team/Sir Rafi.png",
+      "name": "Dr. Muhammad Rafi",
+      "job": "Co-Supervisor"
+    },
+    {
+      "img": "img/team/Izaan.png",
+      "name": "Izaan Sohail",
+      "job": "Member 1"
+    },
+    {
+      "img": "img/team/Maria.png",
+      "name": "Maria Aliasghar",
+      "job": "Member2"
+    },
+    {
+      "img": "img/team/Arisha.png",
+      "name": "Arisha Aziz",
+      "job": "Member 3"
+    }
+  ],
+  "Contact": {
+    "address": "Fast Nuces, Shah Latif Town, Karachi, Pakistan ",
+    "phone": "+92 332 2400 629",
+    "email": "CryptoPrediction@gmail.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-database",
+      "title": "Data Collection",
+      "text": "Details on how data is fetched and Processed to be fed to be ready for Feature Selection."
+    },
+    {
+      "icon": "fa fa-filter",
+      "title": "Feature Selection",
+      "text": "Two Feature Selection methods were used Mean Decrease in Impurity (MDI) and Wrapper Approach to select features."
+    },
+    {
+      "icon": "fa fa-cubes",
+      "title": "Model Training",
+      "text": "A Bidirectional LSTM was used to train the model on the features selected."
+    },
+    {
+      "icon": "fa fa-bar-chart",
+      "title": "Graphical Representation",
+      "text": "Graphical representation of predicted values and acuuracy graphs and cusum control graphs to monitor our model."
+    }
+  ]
+}
