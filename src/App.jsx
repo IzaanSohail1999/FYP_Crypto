@@ -5,7 +5,7 @@ import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Details } from "./components/details";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
+import { Results } from "./components/results";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
@@ -31,7 +31,7 @@ const App = () => {
       <About data={landingPageData.About} />
       <Details data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery}/>
-      {/* <Testimonials data={landingPageData.Testimonials} /> */}
+      <Results data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
     </div>

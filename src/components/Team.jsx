@@ -6,8 +6,8 @@ import img4 from "./Sir Sufyan.png"
 export const Team = (props) => {
   return (
     <div>
-      <div style={{ paddingLeft: "30%", fontWeight: "bold" }} className='col-md-12 col-md-offset-2 section-title text-start'>
-        <h1 style={{ color: "black" }}>Meet the Team</h1>
+      <div className='section-title text-center'>
+        <h2>Meet the Team</h2>
       </div>
       <div id='team'>
       <div >
