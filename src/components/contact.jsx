@@ -37,7 +37,7 @@ export const Contact = (props) => {
             <div className='text-center'>
               <h3>Contact Info</h3>
               <p>
-                <span><i className='fa fa-map-marker'></i> Address</span>
+                <span><i className='fa fa-map-marker'></i> Address </span>
                 {props.data ? props.data.address : 'loading'}
               </p>
               <p>
