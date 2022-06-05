@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/FYP_Crypto/static/css/main.7c90efc5.chunk.css",
+    "main.js": "/FYP_Crypto/static/js/main.983c2c00.chunk.js",
+    "main.js.map": "/FYP_Crypto/static/js/main.983c2c00.chunk.js.map",
+    "runtime-main.js": "/FYP_Crypto/static/js/runtime-main.bbb8b946.js",
+    "runtime-main.js.map": "/FYP_Crypto/static/js/runtime-main.bbb8b946.js.map",
+    "static/js/2.f0742ee7.chunk.js": "/FYP_Crypto/static/js/2.f0742ee7.chunk.js",
+    "static/js/2.f0742ee7.chunk.js.map": "/FYP_Crypto/static/js/2.f0742ee7.chunk.js.map",
+    "index.html": "/FYP_Crypto/index.html",
+    "static/css/main.7c90efc5.chunk.css.map": "/FYP_Crypto/static/css/main.7c90efc5.chunk.css.map",
+    "static/js/2.f0742ee7.chunk.js.LICENSE.txt": "/FYP_Crypto/static/js/2.f0742ee7.chunk.js.LICENSE.txt",
+    "static/media/Arisha.aee86a71.png": "/FYP_Crypto/static/media/Arisha.aee86a71.png",
+    "static/media/BTC_MDI.2eddbd23.png": "/FYP_Crypto/static/media/BTC_MDI.2eddbd23.png",
+    "static/media/BTC_sklearn_MDI.dbd26b7d.png": "/FYP_Crypto/static/media/BTC_sklearn_MDI.dbd26b7d.png",
+    "static/media/Bitcoin_wrapper_approach.cd786ad6.png": "/FYP_Crypto/static/media/Bitcoin_wrapper_approach.cd786ad6.png",
+    "static/media/Btc_Wrapper.9ff3e65c.png": "/FYP_Crypto/static/media/Btc_Wrapper.9ff3e65c.png",
+    "static/media/Eth_MDI.64b1dc7c.png": "/FYP_Crypto/static/media/Eth_MDI.64b1dc7c.png",
+    "static/media/Eth_Wrapper.36fa76b8.png": "/FYP_Crypto/static/media/Eth_Wrapper.36fa76b8.png",
+    "static/media/Eth_sklearn_MDI.f4ced986.png": "/FYP_Crypto/static/media/Eth_sklearn_MDI.f4ced986.png",
+    "static/media/Ethereum_wrapper_approach.f52dc084.png": "/FYP_Crypto/static/media/Ethereum_wrapper_approach.f52dc084.png",
+    "static/media/Izaan.eb627c4b.png": "/FYP_Crypto/static/media/Izaan.eb627c4b.png",
+    "static/media/LSTMArchitecture.78575bc7.png": "/FYP_Crypto/static/media/LSTMArchitecture.78575bc7.png",
+    "static/media/LSTMFlow.c06a7883.png": "/FYP_Crypto/static/media/LSTMFlow.c06a7883.png",
+    "static/media/Maria.f04dfdf9.png": "/FYP_Crypto/static/media/Maria.f04dfdf9.png",
+    "static/media/Sir Rafi.654c9f53.png": "/FYP_Crypto/static/media/Sir Rafi.654c9f53.png",
+    "static/media/Sir Sufyan.b0245c72.png": "/FYP_Crypto/static/media/Sir Sufyan.b0245c72.png",
+    "static/media/bitcoin_cusum.1d20c2c4.png": "/FYP_Crypto/static/media/bitcoin_cusum.1d20c2c4.png",
+    "static/media/cusum.0362acac.png": "/FYP_Crypto/static/media/cusum.0362acac.png",
+    "static/media/eth_cusum.ef5d1fe0.png": "/FYP_Crypto/static/media/eth_cusum.ef5d1fe0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bbb8b946.js",
+    "static/js/2.f0742ee7.chunk.js",
+    "static/css/main.7c90efc5.chunk.css",
+    "static/js/main.983c2c00.chunk.js"
+  ]
+}
